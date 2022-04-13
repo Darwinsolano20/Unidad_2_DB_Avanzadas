@@ -1,0 +1,138 @@
+Replicas1:PRIMARY> rs.status()
+{
+        "set" : "Replicas1",
+        "date" : ISODate("2022-04-13T00:22:22.461Z"),
+        "myState" : 1,
+        "term" : NumberLong(2),
+        "syncingTo" : "",
+        "syncSourceHost" : "",
+        "syncSourceId" : -1,
+        "heartbeatIntervalMillis" : NumberLong(2000),
+        "optimes" : {
+                "lastCommittedOpTime" : {
+                        "ts" : Timestamp(1649809336, 1),
+                        "t" : NumberLong(2)
+                },
+                "readConcernMajorityOpTime" : {
+                        "ts" : Timestamp(1649809336, 1),
+                        "t" : NumberLong(2)
+                },
+                "appliedOpTime" : {
+                        "ts" : Timestamp(1649809336, 1),
+                        "t" : NumberLong(2)
+                },
+                "durableOpTime" : {
+                        "ts" : Timestamp(1649809336, 1),
+                        "t" : NumberLong(2)
+                }
+        },
+        "lastStableCheckpointTimestamp" : Timestamp(1649809286, 1),
+        "electionCandidateMetrics" : {
+                "lastElectionReason" : "electionTimeout",
+                "lastElectionDate" : ISODate("2022-04-13T00:08:26.655Z"),
+                "electionTerm" : NumberLong(2),
+                "lastCommittedOpTimeAtElection" : {
+                        "ts" : Timestamp(1649808398, 1),
+                        "t" : NumberLong(1)
+                },
+                "lastSeenOpTimeAtElection" : {
+                        "ts" : Timestamp(1649808398, 1),
+                        "t" : NumberLong(1)
+                },
+                "numVotesNeeded" : 2,
+                "priorityAtElection" : 1,
+                "electionTimeoutMillis" : NumberLong(10000),
+                "priorPrimaryMemberId" : 0,
+                "numCatchUpOps" : NumberLong(0),
+                "newTermStartDate" : ISODate("2022-04-13T00:08:26.884Z"),
+                "wMajorityWriteAvailabilityDate" : ISODate("2022-04-13T00:08:28.836Z")
+        },
+        "members" : [
+                {
+                        "_id" : 0,
+                        "name" : "localhost:27030",
+                        "health" : 1,
+                        "state" : 2,
+                        "stateStr" : "SECONDARY",
+                        "uptime" : 3467,
+                        "optime" : {
+                                "ts" : Timestamp(1649809336, 1),
+                                "t" : NumberLong(2)
+                        },
+                        "optimeDurable" : {
+                                "ts" : Timestamp(1649809336, 1),
+                                "t" : NumberLong(2)
+                        },
+                        "optimeDate" : ISODate("2022-04-13T00:22:16Z"),
+                        "optimeDurableDate" : ISODate("2022-04-13T00:22:16Z"),
+                        "lastHeartbeat" : ISODate("2022-04-13T00:22:21.233Z"),
+                        "lastHeartbeatRecv" : ISODate("2022-04-13T00:22:21.465Z"),
+                        "pingMs" : NumberLong(0),
+                        "lastHeartbeatMessage" : "",
+                        "syncingTo" : "localhost:27032",
+                        "syncSourceHost" : "localhost:27032",
+                        "syncSourceId" : 1,
+                        "infoMessage" : "",
+                        "configVersion" : 3
+                },
+                {
+                        "_id" : 1,
+                        "name" : "localhost:27032",
+                        "health" : 1,
+                        "state" : 1,
+                        "stateStr" : "PRIMARY",
+                        "uptime" : 4388,
+                        "optime" : {
+                                "ts" : Timestamp(1649809336, 1),
+                                "t" : NumberLong(2)
+                        },
+                        "optimeDate" : ISODate("2022-04-13T00:22:16Z"),
+                        "syncingTo" : "",
+                        "syncSourceHost" : "",
+                        "syncSourceId" : -1,
+                        "infoMessage" : "",
+                        "electionTime" : Timestamp(1649808506, 1),
+                        "electionDate" : ISODate("2022-04-13T00:08:26Z"),
+                        "configVersion" : 3,
+                        "self" : true,
+                        "lastHeartbeatMessage" : ""
+                },
+                {
+                        "_id" : 2,
+                        "name" : "localhost:27033",
+                        "health" : 1,
+                        "state" : 2,
+                        "stateStr" : "SECONDARY",
+                        "uptime" : 3299,
+                        "optime" : {
+                                "ts" : Timestamp(1649809336, 1),
+                                "t" : NumberLong(2)
+                        },
+                        "optimeDurable" : {
+                                "ts" : Timestamp(1649809336, 1),
+                                "t" : NumberLong(2)
+                        },
+                        "optimeDate" : ISODate("2022-04-13T00:22:16Z"),
+                        "optimeDurableDate" : ISODate("2022-04-13T00:22:16Z"),
+                        "lastHeartbeat" : ISODate("2022-04-13T00:22:21.235Z"),
+                        "lastHeartbeatRecv" : ISODate("2022-04-13T00:22:21.413Z"),
+                        "pingMs" : NumberLong(0),
+                        "lastHeartbeatMessage" : "",
+                        "syncingTo" : "localhost:27032",
+                        "syncSourceHost" : "localhost:27032",
+                        "syncSourceId" : 1,
+                        "infoMessage" : "",
+                        "configVersion" : 3
+                }
+        ],
+        "ok" : 1,
+        "operationTime" : Timestamp(1649809336, 1),
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1649809336, 1),
+                "signature" : {
+                        "hash" : BinData(0,"AAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+                        "keyId" : NumberLong(0)
+                }
+        }
+}
+Replicas1:PRIMARY>

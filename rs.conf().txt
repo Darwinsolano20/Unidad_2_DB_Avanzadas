@@ -1,0 +1,83 @@
+Replicas1:PRIMARY> rs.conf()
+{
+        "_id" : "Replicas1",
+        "version" : 3,
+        "protocolVersion" : NumberLong(1),
+        "writeConcernMajorityJournalDefault" : true,
+        "members" : [
+                {
+                        "_id" : 0,
+                        "host" : "localhost:27030",
+                        "arbiterOnly" : false,
+                        "buildIndexes" : true,
+                        "hidden" : false,
+                        "priority" : 1,
+                        "tags" : {
+
+                        },
+                        "slaveDelay" : NumberLong(0),
+                        "votes" : 1
+                },
+                {
+                        "_id" : 1,
+                        "host" : "localhost:27032",
+                        "arbiterOnly" : false,
+                        "buildIndexes" : true,
+                        "hidden" : false,
+                        "priority" : 1,
+                        "tags" : {
+
+                        },
+                        "slaveDelay" : NumberLong(0),
+                        "votes" : 1
+                },
+                {
+                        "_id" : 2,
+                        "host" : "localhost:27033",
+                        "arbiterOnly" : false,
+                        "buildIndexes" : true,
+                        "hidden" : false,
+                        "priority" : 1,
+                        "tags" : {
+
+                        },
+                        "slaveDelay" : NumberLong(0),
+                        "votes" : 1
+                }
+        ],
+        "settings" : {
+                "chainingAllowed" : true,
+                "heartbeatIntervalMillis" : 2000,
+                "heartbeatTimeoutSecs" : 10,
+                "electionTimeoutMillis" : 10000,
+                "catchUpTimeoutMillis" : -1,
+                "catchUpTakeoverDelayMillis" : 30000,
+                "getLastErrorModes" : {
+
+                },
+                "getLastErrorDefaults" : {
+                        "w" : 1,
+                        "wtimeout" : 0
+                },
+                "replicaSetId" : ObjectId("6256073ef3fad5d43fb0e289")
+        }
+}
+Replicas1:PRIMARY> use torneoBasketball
+switched to db torneoBasketball
+Replicas1:PRIMARY> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+Replicas1:PRIMARY> use torneoBasketball;
+switched to db torneoBasketball
+Replicas1:PRIMARY> db.torneoBasketball.save({titulo:'deportistas'});
+WriteResult({ "nInserted" : 1 })
+Replicas1:PRIMARY> show dbs
+admin             0.000GB
+config            0.000GB
+local             0.000GB
+torneoBasketball  0.000GB
+Replicas1:PRIMARY> use torneoBasketball
+switched to db torneoBasketball
+Replicas1:PRIMARY> show collections
+torneoBasketball

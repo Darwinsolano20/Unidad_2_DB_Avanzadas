@@ -1,0 +1,73 @@
+Microsoft Windows [Versión 10.0.19044.1620]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\Administrador>mongo --port 27033
+MongoDB shell version v4.0.28
+connecting to: mongodb://127.0.0.1:27033/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("9bc93e6b-b3bb-4141-9259-601700df3329") }
+MongoDB server version: 4.0.28
+Server has startup warnings:
+2022-04-12T18:27:03.706-0500 I CONTROL  [initandlisten]
+2022-04-12T18:27:03.706-0500 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2022-04-12T18:27:03.707-0500 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2022-04-12T18:27:03.708-0500 I CONTROL  [initandlisten]
+2022-04-12T18:27:03.708-0500 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2022-04-12T18:27:03.708-0500 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server.
+2022-04-12T18:27:03.709-0500 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP
+2022-04-12T18:27:03.709-0500 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2022-04-12T18:27:03.710-0500 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2022-04-12T18:27:03.710-0500 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2022-04-12T18:27:03.710-0500 I CONTROL  [initandlisten]
+---
+Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+
+> show dbs
+2022-04-12T18:32:31.666-0500 E QUERY    [js] Error: listDatabases failed:{
+        "operationTime" : Timestamp(1649806348, 1),
+        "ok" : 0,
+        "errmsg" : "not master and slaveOk=false",
+        "code" : 13435,
+        "codeName" : "NotMasterNoSlaveOk",
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1649806348, 1),
+                "signature" : {
+                        "hash" : BinData(0,"AAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+                        "keyId" : NumberLong(0)
+                }
+        }
+} :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+Mongo.prototype.getDBs@src/mongo/shell/mongo.js:151:1
+shellHelper.show@src/mongo/shell/utils.js:882:13
+shellHelper@src/mongo/shell/utils.js:766:15
+@(shellhelp2):1:1
+Replicas1:SECONDARY> rs.secondaryOk()
+Replicas1:SECONDARY> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+Replicas1:SECONDARY> show dbs
+admin             0.000GB
+config            0.000GB
+local             0.000GB
+torneoBasketball  0.000GB
+Replicas1:SECONDARY> show dbs
+admin             0.000GB
+config            0.000GB
+local             0.000GB
+torneoBasketball  0.000GB
+Replicas1:SECONDARY> show dbs
+admin             0.000GB
+config            0.000GB
+local             0.000GB
+torneoBasketball  0.000GB
+Replicas1:SECONDARY>
